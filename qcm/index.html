@@ -15,48 +15,34 @@
 
     <p>Faites le test pour découvrir votre profil ! Vous ne pouvez choisir qu'une seule réponse par question. A vous de jouer !</p>
 
-        <form ng-controller="asksController">
+        <form ng-controller="formController" ng-submit="calculate(ask.score)">
             <div ng-repeat="ask in asks">
-                <p>Question n° {{ ask.id }} - <span class="">{{ ask.ask }}</span></p>
-                <div class="radio">
+                <p>Question n° {{ ask.id }} - <span class="">{{ ask.label }}</span></p>
+                <div class="radio" ng-repeat="answer in ask.answers">
                     <label>
-                        <input type="radio" name="{{ ask.id }}" id="optionsRadios1" value="ask.answers[0].score" checked>
-                        {{ ask.answers[0].label }}
-                    </label>
-                </d
-                <div class="radio">
-                   <div class="radio">
-                    <label>
-                        <input type="radio" name="{{ ask.id }}" id="optionsRadios1" value="ask.answers[1].score" checked>
-                        {{ ask.answers[1].label }}
-                    </label>
-                </div>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="{{ ask.id }}" id="optionsRadios1" value="ask.answers[2].score" checked>
-                        {{ ask.answers[2].label }}
+                        <input type="radio" name="{{ ask.id }}" id="optionsRadios1" value="{{ answer.score }}" ng-model="ask.score" required="required">
+                        {{ answer.label }}
                     </label>
                 </div>
             </div>
-            <div ng-controller="formController">
-                <input type="submit" ng-click="calculate()" value="Calculer mon score" />
+                <input type="submit" value="Calculer mon score" />
+                <input type="reset" value="Recommencer">
+            <div ng-show="result">
+                <p>Vous avez obtenu un score de {{ result }}.</p>
+                <p>Vous êtes un {{ profil.name }}.</p>
+                <p>{{ profil.description }}</p>
             </div>
         </form>
         
-        <div ng-controller="categoriesController">
-            {{ categories | json }}
-        </div>
+        
     </div>
     
 </div>
     
 
 <script type="text/javascript" src="js/angular.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/controller/asks.js"></script>
 <script type="text/javascript" src="js/controller/categories.js"></script>
-<script type="text/javascript" src="js/controller/formController.js"></script>
+<script type="text/javascript" src="js/controller/form.js"></script>
 </body>
 </html>
