@@ -26,8 +26,8 @@
                 </div>
             </div>
                 <input type="submit" value="Calculer mon score" />
-                <input type="reset" value="Recommencer">
-            <div ng-show="result">
+                <input type="reset" value="Recommencer" ng-click="reinit()">
+            <div ng-show="display">
                 <p>Vous avez obtenu un score de {{ result }}.</p>
                 <p>Vous êtes un {{ profil.name }}.</p>
                 <p>{{ profil.description }}</p>

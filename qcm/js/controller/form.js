@@ -1,10 +1,11 @@
 myApp.controller("formController", function ($scope) {
-    
+    $scope.display = false;
     
     $scope.calculate = function () {
         $scope.totalScore = 0;
         $scope.result;
         angular.forEach($scope.asks, function(ask) {
+            $scope.display = true;
             $scope.totalScore += parseInt(ask.score);
         });
         if ($scope.totalScore > 10) {
@@ -21,6 +22,10 @@ myApp.controller("formController", function ($scope) {
         }
         $scope.totalScore = 0;
     };
+    
+    $scope.reinit = function() {
+        $scope.display = false;
+    }
     
     $scope.asks = [
         {
