@@ -3,133 +3,150 @@ myApp.controller("asksController", function ($scope) {
     $scope.asks = [
         {
             id : 1,
-            ask : "Combien de séries avez-vous suivi entièrement (vu chaque épisode de chaque saison) ?",
+            label : "Combien de séries avez-vous suivi entièrement (vu chaque épisode de chaque saison) ?",
             answers : [
                 {
-                 value : 1,
-                 answer : "Aucune"
+                 score : 0,
+                 label : "Aucune",
+                 category : "Minable"
                 },
                 {
-                 value : 2,
-                 answer : "Une ou deux"
+                 score : 1,
+                 label : "Une ou deux",
+                 category : "Minable"
                 },
                 {
-                 value : 3,
-                 answer : "Plus de 3"
+                 score : 2,
+                 label : "Plus de 3",
+                 category : "Minable"
                 }
             ]
         },
         {
             id : 2,
-            ask : "Dans « Lost Girl », qui est « Bo » ?",
+            label : "Dans « Lost Girl », qui est « Bo » ?",
             answers : [
                 {
-                 value : 1,
-                 answer : "Une sorcière"
+                 score : 0,
+                 label : "Une sorcière",
+                 category : "Minable"
                 },
                 {
-                 value : 2,
-                 answer : "Un succube"
+                 score : 1,
+                 label : "Un succube",
+                 category : "Minable"
                 },
                 {
-                 value : 3,
-                 answer : "Un vampire"
+                 score : 0,
+                 label : "Un vampire",
+                 category : "Minable"
                 }
             ]
         },
         {
             id : 3,
-            ask : "Dans « Arrow », quel surnom Oliver donne-t-il à sa petite soeur ?",
+            label : "Dans « Arrow », quel surnom Oliver donne-t-il à sa petite soeur ?",
             answers : [
                 {
-                 value : 1,
-                 answer : "Mimi"
+                 score : 0,
+                 label : "Mimi",
+                 category : "Minable"
                 },
                 {
-                 value : 2,
-                 answer : "Sweety"
+                 score : 0,
+                 label : "Sweety",
+                 category : "Minable"
                 },
                 {
-                 value : 3,
-                 answer : "Speedy"
+                 score : 2,
+                 label : "Speedy",
+                 category : "Minable"
                 }
             ]
         },
         {
             id : 4,
-            ask : "Comment s'appelle le colocataire de Sheldon Cooper dans « The Big Bang Theory » ?",
+            label : "Comment s'appelle le colocataire de Sheldon Cooper dans « The Big Bang Theory » ?",
             answers : [
                 {
-                 value : 1,
-                 answer : "Leonard"
+                 score : 2,
+                 label : "Leonard",
+                 category : "Minable"
                 },
                 {
-                 value : 2,
-                 answer : "Howard"
+                 score : 1,
+                 label : "Howard",
+                 category : "Minable"
                 },
                 {
-                 value : 3,
-                 answer : "Logan"
+                 score : 0,
+                 label : "Logan",
+                 category : "Minable"
                 }
             ]
         },
         {
             id : 5,
-            ask : "De qui la Reine Marie s'éprend-elle dans « Reign » ?",
+            label : "De qui la Reine Marie s'éprend-elle dans « Reign » ?",
             answers : [
                 {
-                 value : 1,
-                 answer : "François 1er"
+                 score : 1,
+                 label : "François 1er",
+                 category : "Minable"
                 },
                 {
-                 value : 2,
-                 answer : "Henri VIII"
+                 score : 0,
+                 label : "Henri VIII",
+                 category : "Minable"
                 },
                 {
-                 value : 3,
-                 answer : "Louis de Condé"
+                 score : 2,
+                 label : "Louis de Condé",
+                 category : "Minable"
                 }
             ]
         },
         {
             id : 6,
-            ask : "De quelle maladie Walter White souffre-t-il au début de « Breaking Bad » ?",
+            label : "De quelle maladie Walter White souffre-t-il au début de « Breaking Bad » ?",
             answers : [
                 {
-                 value : 1,
-                 answer : "Un cancer"
+                 score : 1,
+                 label : "Un cancer",
+                 category : "Minable"
                 },
                 {
-                 value : 2,
-                 answer : "Une pneumonie"
+                 score : 0,
+                 label : "Une pneumonie",
+                 category : "Minable"
                 },
                 {
-                 value : 3,
-                 answer : "Azheimer"
+                 score : 0,
+                 label : "Alzheimer",
+                 category : "Minable"
                 }
             ]
         },
         {
             id : 6,
-            ask : "Dans « Supernatural », au volant de quelle voiture Sam et Dean parcourent-ils les Etats-Unis ?",
+            label : "Dans « Supernatural », au volant de quelle voiture Sam et Dean parcourent-ils les Etats-Unis ?",
             answers : [
                 {
-                 value : 1,
-                 answer : "Une Impala"
+                 score : 2,
+                 label : "Une Chevrolet",
+                 category : "Minable"
                 },
                 {
-                 value : 2,
-                 answer : "Un Hummer"
+                 score : 0,
+                 label : "Un Hummer",
+                 category : "Minable"
                 },
                 {
-                 value : 3,
-                 answer : "Une Chevrolet"
+                 score : 0,
+                 label : "Un Chrysler",
+                 category : "Minable"
                 }
             ]
         }
-    ]
-    
-    $scope.answers = function (askId) {
-        
-    }
+    ];
 });
