@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tenue de Compte</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+</head>
+<body ng-app="myApp">
+
+<div class="container">
+    
+    <div class="row">
+        <h1>Tenue de Compte</h1>
+    </div>
+    <div class="row">
+        <div ng-app="app">
+            <div ng-controller="appCtrl">
+                <input placeholder="valeur" />
+                <button>Ajouter dépense</button>
+                <ul>
+                    <li ng-repeat="depense in depenses">
+                        {{ depense.valeur }} <span>×</span>
+                    </li>
+                </ul>
+                <strong>Total des dépenses : ...</strong>
+            </div>
+        </div>
+    </div>
+    
+</div>
+    
+
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/controller/count.js"></script>
+</body>
+</html>
