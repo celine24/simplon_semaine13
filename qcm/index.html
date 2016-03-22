@@ -4,6 +4,7 @@
     <title>QCM</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8" />
 </head>
 <body ng-app="myApp">
@@ -11,30 +12,37 @@
 <div class="container">
     
     <div class="row">
-    <h1>Quel série-addict êtes-vous ?</h1>
-
-    <p>Faites le test pour découvrir votre profil ! Vous ne pouvez choisir qu'une seule réponse par question. A vous de jouer !</p>
-
-        <form ng-controller="formController" ng-submit="calculate(ask.score)">
-            <div ng-repeat="ask in asks">
-                <p>Question n° {{ ask.id }} - <span class="">{{ ask.label }}</span></p>
-                <div class="radio" ng-repeat="answer in ask.answers">
-                    <label>
-                        <input type="radio" name="{{ ask.id }}" id="optionsRadios1" value="{{ answer.score }}" ng-model="ask.score" required="required">
-                        {{ answer.label }}
-                    </label>
+        <div class="col-xs-12">
+            <h1>Quel série-addict êtes-vous ? </h1>
+        
+            <p class="lead">Faites le test pour découvrir votre profil ! Vous ne pouvez choisir qu'une seule réponse par question. A vous de jouer !</p>
+        </div>
+        <div class="col-xs-12">
+            <form ng-controller="formController" ng-submit="calculate(ask.score)">
+                <div ng-repeat="ask in asks" class="row">
+                    <div class="col-xs-12">
+                        <p class="labelQ"><span class="labelNumb">Question n° {{ ask.id }} -</span> {{ ask.label }}</p>
+                        <div class="radio" ng-repeat="answer in ask.answers">
+                            <label>
+                                <input type="radio" name="{{ ask.id }}" id="optionsRadios1" value="{{ answer.score }}" ng-model="ask.score" required="required">
+                                {{ answer.label }}
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </div>
-                <input type="submit" value="Calculer mon score" />
-                <input type="reset" value="Recommencer" ng-click="reinit()">
-            <div ng-show="display">
-                <p>Vous avez obtenu un score de {{ result }}.</p>
-                <p>Vous êtes un {{ profil.name }}.</p>
-                <p>{{ profil.description }}</p>
-            </div>
-        </form>
-        
-        
+                <div class="row">
+                    <input type="submit" value="Calculer mon score" class="btn btn-primary" />
+                    <input type="reset" value="Recommencer" ng-click="reinit()" class="btn btn-danger" />
+                </div>
+                <div class="row">
+                    <div ng-show="display" class="col-xs-12 result bg-info">
+                        <p class="resultScore">Vous avez obtenu un score de {{ result }}.</p>
+                        <p>Vous êtes un <span class="resultName text-info">{{ profil.name }}</span>.</p>
+                        <p class="resultDescription">{{ profil.description }}</p>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
     
 </div>
@@ -42,6 +50,8 @@
 
 <script type="text/javascript" src="js/angular.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/controller/categories.js"></script>
 <script type="text/javascript" src="js/controller/form.js"></script>
 </body>

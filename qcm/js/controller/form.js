@@ -25,7 +25,7 @@ myApp.controller("formController", function ($scope) {
     
     $scope.reinit = function() {
         $scope.display = false;
-    }
+    };
     
     $scope.asks = [
         {

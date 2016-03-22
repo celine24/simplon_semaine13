@@ -1,0 +1,21 @@
+.container {
+    min-height:1200px !important;
+}
+
+.labelNumb, .resultScore {
+    font-weight:bold;
+    font-size:16px;
+}
+
+.result {
+    margin-top:20px;
+    padding:20px;
+}
+
+.resultDescription {
+    font-style:italic;
+}
+
+.resultName {
+    font-size:20px;
+}
