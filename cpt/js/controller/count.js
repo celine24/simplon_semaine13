@@ -1,19 +1,16 @@
-app.controller('appCtrl', ['$scope', '$http', function ($scope, $http, $rootScope) {
+app.controller('appCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.depenses = [
         { valeur: 50 },
         { valeur: 25 }
     ];
-
     
-    $scope.calculation = function() {
-        var sum = 0;
+    $scope.sum = function () {
+        var total = 0;
         angular.forEach($scope.depenses, function(value, key) {
-            sum += value["valeur"];
+            total += value["valeur"];
         });
-        return sum;
+        $scope.sum = total;
     };
-    
-    $scope.total = $scope.calculation();
     
     $scope.addExp = function(expense) {
         var obj = {};
@@ -21,8 +18,6 @@ app.controller('appCtrl', ['$scope', '$http', function ($scope, $http, $rootScop
         if (!isNaN(expense)) {
             obj["valeur"] = expense; 
             $scope.depenses.push(obj);
-            
-            $scope.total = $scope.calculation();
         }
         else {
             alert("Vous n\'avez pas entré un nombre.");
@@ -31,7 +26,7 @@ app.controller('appCtrl', ['$scope', '$http', function ($scope, $http, $rootScop
     
     $scope.removeExp = function(index) {
         $scope.depenses.splice(index, 1);
-        $scope.total = $scope.calculation();
     };
     
+    $scope.$watch("depenses", $scope.sum, true);
 }]);
