@@ -29,4 +29,9 @@ app.controller('appCtrl', ['$scope', '$http', function ($scope, $http, $rootScop
         }
     };
     
+    $scope.removeExp = function(index) {
+        $scope.depenses.splice(index, 1);
+        $scope.total = $scope.calculation();
+    };
+    
 }]);

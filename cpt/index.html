@@ -21,7 +21,7 @@
                 <button ng-click="addExp(expense)">Ajouter dépense</button>
                 <ul>
                     <li ng-repeat="depense in depenses">
-                        {{ depense.valeur }} <span>×</span>
+                        {{ depense.valeur }} <span ng-click="removeExp($index)">×</span>
                     </li>
                 </ul>
                 <strong>Total des dépenses : {{ total }}</strong>
