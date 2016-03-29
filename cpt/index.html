@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8" />
 </head>
-<body ng-app="myApp">
+<body ng-app="app">
 
 <div class="container">
     
@@ -17,8 +17,8 @@
     <div class="row">
         <div ng-app="app">
             <div ng-controller="appCtrl">
-                <input placeholder="valeur" />
-                <button>Ajouter dépense</button>
+                <input placeholder="valeur" ng-model="expense" />
+                <button ng-click="addExp(expense)">Ajouter dépense</button>
                 <ul>
                     <li ng-repeat="depense in depenses">
                         {{ depense.valeur }} <span>×</span>
@@ -34,8 +34,6 @@
 
 <script type="text/javascript" src="js/angular.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
-<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/controller/count.js"></script>
 </body>
 </html>
